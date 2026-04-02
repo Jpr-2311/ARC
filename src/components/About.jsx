@@ -13,7 +13,7 @@ const About = () => (
     <div className="about-inner">
       <div className="about-left reveal-left">
         <p className="eyebrow">About ARC</p>
-        <h2 className="section-title">Born from<br />imagination,<br /><em>built for reality</em></h2>
+        <h2 className="section-title">Born from<br />imagination,<br /><em>built for reality.</em></h2>
         <div className="about-line" />
         <p className="about-text">
           ARC — Adaptive Reality Core — is a real-time intelligent HUD system born from

@@ -57,7 +57,7 @@ const TechStack = () => (
     <div className="tech-inner">
       <div className="tech-header reveal">
         <p className="eyebrow">Architecture</p>
-        <h2 className="section-title">The stack<br /><em>behind Jarvis</em></h2>
+        <h2 className="section-title">The stack<br /><em>behind ARC.</em></h2>
         <p className="section-sub">Every tool chosen for a reason — speed, privacy, and intelligence.</p>
       </div>
 

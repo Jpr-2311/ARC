@@ -14,7 +14,7 @@ const Footer = () => (
       </div>
 
       <nav className="footer-nav">
-        {['Features', 'How It Works', 'Tech', 'About', 'Team', 'Contact'].map(l => (
+        {['Home', 'How It Works', 'Tech', 'About', 'Team', 'Contact'].map(l => (
           <a key={l} href={`#${l.toLowerCase().replace(/\s+/g,'-')}`}>{l}</a>
         ))}
       </nav>
