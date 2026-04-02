@@ -20,7 +20,6 @@ const Hero = () => {
       const { width: w, height: h } = canvas
       ctx.clearRect(0, 0, w, h)
 
-      // Subtle dot grid
       ctx.fillStyle = 'rgba(244,93,0,0.15)'
       const gap = 48
       for (let x = gap; x < w; x += gap) {
@@ -31,7 +30,6 @@ const Hero = () => {
         }
       }
 
-      // Scan line
       const scanY = ((t * 0.00015) % 1) * h
       const g = ctx.createLinearGradient(0, scanY - 80, 0, scanY + 80)
       g.addColorStop(0, 'rgba(244,93,0,0)')
@@ -55,7 +53,7 @@ const Hero = () => {
         <div className="hero-left">
           <div className="hero-eyebrow">
             <span className="eyebrow-dot" />
-            <span>System Online — v2.4.1</span>
+            <span>ARC is Online — v2.4.1</span>
           </div>
 
           <h1 className="hero-title">
@@ -65,9 +63,9 @@ const Hero = () => {
           </h1>
 
           <p className="hero-desc">
-            A real-time AI-powered HUD that merges computer vision,
-            embedded IoT hardware, and futuristic interface design
-            into one seamless experience.
+            ARC is a voice-controlled AI system that lets you command your computer,
+            monitor your biometrics, and see everything in a live HUD —
+            all hands-free, powered by ARC.
           </p>
 
           <div className="hero-ctas">
@@ -77,23 +75,23 @@ const Hero = () => {
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="#how-it-works" className="hcta-ghost">Watch how it works</a>
+            <a href="#how-it-works" className="hcta-ghost">See how it works</a>
           </div>
 
           <div className="hero-stats">
             <div className="hstat">
               <span className="hstat-n">30<em>fps</em></span>
-              <span className="hstat-l">Live Stream</span>
+              <span className="hstat-l">Live HUD</span>
             </div>
             <div className="hstat-sep" />
             <div className="hstat">
-              <span className="hstat-n">AI+IoT</span>
-              <span className="hstat-l">Integrated</span>
+              <span className="hstat-n">Voice</span>
+              <span className="hstat-l">Controlled</span>
             </div>
             <div className="hstat-sep" />
             <div className="hstat">
-              <span className="hstat-n">360°</span>
-              <span className="hstat-l">HUD Coverage</span>
+              <span className="hstat-n">IoT</span>
+              <span className="hstat-l">Biometrics</span>
             </div>
           </div>
         </div>
@@ -114,7 +112,7 @@ const Hero = () => {
               <span className="ot-dot" />Heart Rate: 72bpm
             </div>
             <div className="orb-tag ot3">
-              <span className="ot-dot" />Temp: 36.8°C
+              <span className="ot-dot" />ARC: Listening
             </div>
             <div className="orb-tag ot4">
               <span className="ot-dot" />Voice Auth
