@@ -6,7 +6,7 @@ const Contact = () => (
     <div className="contact-inner">
       <div className="contact-left reveal-left">
         <p className="eyebrow">Get In Touch</p>
-        <h2 className="section-title">Let's talk<br /><em>about ARC</em></h2>
+        <h2 className="section-title">Let's talk<br /><em>about ARC.</em></h2>
         <div className="contact-line" />
         <p className="contact-desc">
           Have questions about the project? Want to collaborate, contribute, or just

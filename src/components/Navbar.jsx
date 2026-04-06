@@ -13,7 +13,7 @@ const Navbar = () => {
   }, [])
 
   const links = [
-    { label: 'Features', href: '#features' },
+    { label: 'Home', href: '#hero' },
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Tech', href: '#tech' },
     { label: 'About', href: '#about' },

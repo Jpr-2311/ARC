@@ -1,11 +1,15 @@
 import React from 'react'
 import './Team.css'
+import Aariyan from '../assets/Aariyan.jpeg'
+import Jithin from '../assets/Jithin.jpeg'
+import Laasya from '../assets/Laasya.jpeg'
+import Shivani from '../assets/Shivani.jpeg'
 
 const members = [
-  { name: 'Member 1', role: 'Lead Developer', bio: 'Add your bio here.', initials: 'M1', photo: null },
-  { name: 'Member 2', role: 'Computer Vision', bio: 'Add your bio here.', initials: 'M2', photo: null },
-  { name: 'Member 3', role: 'IoT & Hardware', bio: 'Add your bio here.', initials: 'M3', photo: null },
-  { name: 'Member 4', role: 'UI/UX Design', bio: 'Add your bio here.', initials: 'M4', photo: null },
+  { name: 'S.Aariyan', role: 'FOUNDER', bio: 'Life is never ending constant,ascend towards perfection.', initials: 'M1', photo: Aariyan },
+  { name: 'Jithin PR', role: 'CO-FOUNDER', bio: 'You don’t need more time.You need fewer distractions.', initials: 'M2', photo: Jithin },
+  { name: 'Laasya UG', role: 'Marketing Lead', bio: 'Discipline beats motivation on days you don’t feel like showing up.', initials: 'M3', photo: Laasya },
+  { name: 'Shivani S', role: 'Lead Hardware Engineer', bio: 'Code is cheap.Thinking is expensive.', initials: 'M4', photo: Shivani },
 ]
 
 const Team = () => (
@@ -13,7 +17,7 @@ const Team = () => (
     <div className="team-inner">
       <div className="team-header reveal">
         <p className="eyebrow">The People</p>
-        <h2 className="section-title">Meet the<br /><em>team</em></h2>
+        <h2 className="section-title">Meet the<br /><em>team.</em></h2>
         <p className="section-sub">Four builders who turned an idea into a system.</p>
       </div>
 
@@ -35,14 +39,10 @@ const Team = () => (
               <span className="tc-role">{m.role}</span>
               <p className="tc-bio">{m.bio}</p>
             </div>
-            <div className="tc-number">0{i + 1}</div>
+            {/* <div className="tc-number">0{i + 1}</div> */}
           </div>
         ))}
       </div>
-
-      <p className="team-note reveal delay-2">
-        Replace the placeholder names and photos in <code>Team.jsx</code> with your actual details.
-      </p>
     </div>
   </section>
 )
