@@ -1,10 +1,11 @@
 import React from 'react'
 import './Team.css'
 import Aariyan from '../assets/Aariyan.jpeg'
+import Jithin from '../assets/jithin.jpeg'
 
 const members = [
   { name: 'S.Aariyan', role: 'FOUNDER', bio: 'Life is never ending constant,ascend towards perfection.', initials: 'M1', photo: Aariyan },
-  { name: 'Jithin PR', role: 'CO-FOUNDER', bio: 'Add your bio here.', initials: 'M2', photo: null },
+  { name: 'Jithin PR', role: 'CO-FOUNDER', bio: 'Add your bio here.', initials: 'M2', photo: Jithin },
   { name: 'Laasya UG', role: 'Social-Media Lead', bio: 'Add your bio here.', initials: 'M3', photo: null },
   { name: 'Shivani S', role: 'UI/UX Design', bio: 'Add your bio here.', initials: 'M4', photo: null },
 ]
