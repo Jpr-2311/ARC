@@ -36,7 +36,7 @@ function App() {
       <HowItWorks />
       <TechStack />
       <About />
-      <Team />
+      {/* <Team /> */}
       <Contact />
       <Footer />
       <ChatBot />
