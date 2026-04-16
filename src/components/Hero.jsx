@@ -63,9 +63,7 @@ const Hero = () => {
           </h1>
 
           <p className="hero-desc">
-            ARC is a voice-controlled AI system that lets you command your computer,
-            monitor your biometrics, and see everything in a live HUD —
-            all hands-free, powered by ARC.
+            ARC is a proactive, voice-controlled AI Operating System. Built with multi-agent orchestration to command your Mac, manage a Second Brain, and pave the way for a futuristic biometric HUD. 
           </p>
 
           <div className="hero-ctas">
@@ -80,8 +78,8 @@ const Hero = () => {
 
           <div className="hero-stats">
             <div className="hstat">
-              <span className="hstat-n">30<em>fps</em></span>
-              <span className="hstat-l">Live HUD</span>
+              <span className="hstat-n">OS<em>Core</em></span>
+              <span className="hstat-l">Agentic</span>
             </div>
             <div className="hstat-sep" />
             <div className="hstat">
@@ -90,8 +88,8 @@ const Hero = () => {
             </div>
             <div className="hstat-sep" />
             <div className="hstat">
-              <span className="hstat-n">IoT</span>
-              <span className="hstat-l">Biometrics</span>
+              <span className="hstat-n">HUD</span>
+              <span className="hstat-l">Vision '27</span>
             </div>
           </div>
         </div>
@@ -106,16 +104,16 @@ const Hero = () => {
               <img src={logoImg} alt="ARC" />
             </div>
             <div className="orb-tag ot1">
-              <span className="ot-dot" />Face Tracking
+              <span className="ot-dot" />ManagerBrain: Active
             </div>
             <div className="orb-tag ot2">
-              <span className="ot-dot" />Heart Rate: 72bpm
+              <span className="ot-dot" />Second Brain: Synced
             </div>
             <div className="orb-tag ot3">
               <span className="ot-dot" />ARC: Listening
             </div>
             <div className="orb-tag ot4">
-              <span className="ot-dot" />Voice Auth
+              <span className="ot-dot" />ECAPA Voice Auth
             </div>
           </div>
         </div>

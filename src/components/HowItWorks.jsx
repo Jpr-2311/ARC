@@ -4,43 +4,43 @@ import './HowItWorks.css'
 const steps = [
   {
     num: '01',
-    title: 'Wake from Your Wrist',
-    desc: 'Your ESP32 wristband has a built-in mic that continuously listens for the wake word "Arc" using Porcupine — a lightweight on-device engine. No internet needed to wake. Battery impact is near zero since it runs on the microcontroller, not your laptop.'
+    title: 'listen() & Audio Clean',
+    desc: 'Audio is captured via PyAudio, stripped of noise via WebRTC VAD, and instantly transcribed using local OpenAI Whisper without sending voice packets to the cloud.'
   },
   {
     num: '02',
-    title: 'Noise Cancellation',
-    desc: 'In a crowded classroom, café, or street — ARC still hears you clearly. WebRTC VAD (Voice Activity Detection) strips background noise in real time before your voice ever reaches the AI. Only clean, isolated speech gets processed.'
+    title: 'normalize() & Context',
+    desc: 'The NLP engine strips filler words and automatically resolves contextual pronouns (e.g. replacing "that" with "superman.txt") using the recent file cache.'
   },
   {
     num: '03',
-    title: 'Voice Identity Verified',
-    desc: 'ECAPA-TDNN — a deep neural network trained on speaker embeddings — compares your voice signature against your registered profile. If it doesn\'t match, Arc stays silent. No false triggers from roommates, strangers, or recordings.'
+    title: 'fast_intent() Routing',
+    desc: 'Before invoking an LLM, ARC checks Local Sentence Embeddings for high-confidence matches. If similarity is >85%, it natively executes the command in under 100ms.'
   },
   {
     num: '04',
-    title: 'Whisper Transcribes',
-    desc: 'OpenAI Whisper runs locally on your laptop — no cloud, no API call, no data leaving your machine. It converts your speech to text with high accuracy even with accents or casual speech. The transcript is ready in under a second.'
+    title: 'ManagerBrain DAG',
+    desc: 'If the command is complex or low confidence ("create a folder AND open vscode"), it falls back to the ManagerBrain to generate a multi-step Directed Acyclic Graph (DAG).'
   },
   {
     num: '05',
-    title: 'Gemini Understands Context',
-    desc: 'The transcript goes to Gemini 1.5 Flash along with your conversation history and memory. Arc knows what you said yesterday, what projects you\'re working on, your habits and preferences. It doesn\'t just answer — it responds like someone who knows you.'
+    title: 'safe_execute()',
+    desc: 'Agents sequentially traverse the DAG, running python modules or os processes. Destructive commands (like deleting files) hook into a confirmation manager to ensure safety.'
   },
   {
     num: '06',
-    title: 'Arc Acts on Your Laptop',
-    desc: 'Arc runs as a background process 24/7 on your Mac. It can open and close apps, search and manage files, read and send emails, write code, build and deploy projects, set reminders, summarise PDFs — all through natural voice commands.'
+    title: 'Reinforcement Interrupt',
+    desc: 'If ARC misclassifies an intent, you can interrupt it by saying "No, I meant X." The InterruptManager instantly kills the subprocess and triggers the correction loop.'
   },
   {
     num: '07',
-    title: 'Response Streams to Your Ear',
-    desc: 'The reply is converted to speech using Mac\'s built-in Daniel voice and streamed via Bluetooth to your earphones connected to the wristband. You hear Arc respond naturally — with personality, humour, and context — within seconds of speaking.'
+    title: 'Negative Self-Learning',
+    desc: 'When corrected, reinforcement.py logs the original phrase as an "anti-example," mathematically penalizing its vector similarity score so ARC never iterates the same mistake.'
   },
   {
     num: '08',
-    title: 'HUD for Verified Users Only',
-    desc: 'If you\'re using ARC\'s visual HUD — a live camera overlay with face tracking and biometrics — it only activates and displays data for faces that pass voice or face verification. Unrecognised people see nothing. Your data stays yours.'
+    title: 'Confidence Boost Vectoring',
+    desc: 'Conversely, successful executions trigger a positive reinforcement boost. The more a command works, the higher its local similarity score climbs, permanently hardwiring the neural pathway.'
   },
 ]
 
@@ -48,11 +48,10 @@ const HowItWorks = () => (
   <section id="how-it-works" className="hiw">
     <div className="hiw-inner">
       <div className="hiw-header reveal">
-        <p className="eyebrow">How It Works</p>
-        <h2 className="section-title">Speak once.<br /><em>Arc handles the rest.</em></h2>
+        <p className="eyebrow">Execution Pipeline</p>
+        <h2 className="section-title">A true cognitive architecture.<br /><em>Here's how ARC processes commands.</em></h2>
         <p className="section-sub">
-          A wristband on your wrist. An AI running on your laptop. A voice in your ear.
-          Here's exactly how it all connects.
+          Below is the exact execution loop from the 'core/intent_router.py' daemon. No fake API delays. No hardcoded RegEx patterns. True Agentic routing.
         </p>
       </div>
 
@@ -70,13 +69,12 @@ const HowItWorks = () => (
 
       <div className="hiw-flow reveal delay-2">
         {[
-          'Wristband',
-          'Noise Filter',
-          'Voice Auth',
-          'Whisper',
-          'Arc AI',
-          'Laptop Control',
-          'Earphones'
+          'listen()',
+          'normalize()',
+          'fast_intent()',
+          'ManagerBrain DAG',
+          'safe_execute()',
+          'rlhf_loop()'
         ].map((node, i, arr) => (
           <React.Fragment key={node}>
             <div className={`flow-node ${node === 'Arc AI' ? 'flow-node--center' : ''}`}>
