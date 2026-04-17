@@ -11,7 +11,7 @@ const Navbar = () => {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
+/*
   const links = [
     { label: 'Home', href: '#hero' },
     { label: 'How It Works', href: '#how-it-works' },
@@ -19,7 +19,15 @@ const Navbar = () => {
     { label: 'About', href: '#about' },
     { label: 'Team', href: '#team' },
   ]
+  
+*/
 
+ const links = [
+    { label: 'Home', href: '#hero' },
+    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Tech', href: '#tech' },
+    { label: 'About', href: '#about' },
+  ]
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <a href="#hero" className="nav-logo">
