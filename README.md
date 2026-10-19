@@ -1,16 +1,51 @@
-# React + Vite
+# ARC — Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing site for **ARC (Adaptive Reality Core)**, a voice-controlled AI assistant for the desktop.
+The assistant itself lives in [ARC Remote](https://github.com/Jpr-2311/ARC-REMOTE-DA); this repository is only the website.
 
-Currently, two official plugins are available:
+## Sections
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Section | Content |
+| --- | --- |
+| Hero | Animated canvas background (dot grid and scan line) and live-status chips |
+| About | Origin of the project and its core components |
+| Features | Intent router, second brain, voice execution, voice authentication, vision |
+| How it works | Step-by-step flow of a voice command |
+| Tech stack | Components of the assistant, grouped by layer |
+| Team, Contact, Footer | Team cards with photos, contact details |
+| Chat widget | Floating chat panel with suggested questions |
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React 19, Vite, GSAP (`@gsap/react`) and Framer Motion for animation, plain CSS per component.
 
-## Expanding the ESLint configuration
+## Run it
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev        # development server
+npm run build      # production build in dist/
+npm run preview    # serve the production build
+```
+
+No environment variables are needed.
+
+## Project layout
+
+```text
+src/
+  App.jsx            page composition
+  animations.js      shared GSAP animations
+  components/        Hero, About, Features, HowItWorks, TechStack, Team, Contact, Footer, Navbar, ChatBot
+  assets/            logo and team photos
+```
+
+## Known limits
+
+- The chat widget calls the Anthropic Messages API directly from the browser without credentials, so it shows its
+  fallback message. A working chat needs a small server-side proxy that holds the API key. Never put the key in
+  frontend code or in a `VITE_` variable, because Vite bundles those into the public JavaScript.
+
+## Team
+
+S. Aariyan (founder), Jithin P R (co-founder), Laasya U G (marketing lead), Shivani S (lead hardware engineer).
